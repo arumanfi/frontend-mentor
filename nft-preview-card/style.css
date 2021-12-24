@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+:root {
+  --main-background: hsl(217, 54%, 11%);
+  --card-background: hsl(216, 50%, 16%);
+  --color-blue: hsl(215, 51%, 70%);
+  --color-cyan: hsl(178, 100%, 50%);
+  --line-color: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--main-background);
+  color: var(--color-blue);
+  font-size: 18px;
+  font-family: "Outfit", sans-serif;
+}
+
+.card {
+  width: 360px;
+  margin: 30px auto;
+  padding: 24px;
+  background: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 1px 14px 5px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product-img img {
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.product-img {
+  position: relative;
+}
+
+.product-img::after {
+  content: "";
+  background: url("images/icon-view.svg") center no-repeat;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  height: 98.75%;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: hsla(178, 100%, 50%, 0.6);
+  transition: 0.5s ease;
+  opacity: 0;
+}
+
+.product-img:hover::after {
+  opacity: 1;
+}
+
+.product-name {
+  color: var(--white);
+  margin: 1rem 0;
+  font-size: 1.25em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.product-name:hover {
+  color: var(--color-cyan);
+}
+
+.product-desc {
+  font-weight: 300;
+}
+
+.info {
+  margin: 1.25rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  color: var(--color-cyan);
+  font-weight: 600;
+}
+
+svg {
+  margin-right: 4px;
+}
+
+.creator {
+  padding: 1rem 0 0;
+  display: flex;
+  border-top: 1px solid var(--line-color);
+}
+
+.creator-img {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.creator span {
+  color: var(--white);
+  cursor: pointer;
+}
+.creator span:hover {
+  color: var(--color-cyan);
+}
